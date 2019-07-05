@@ -74,6 +74,7 @@ int main()
         out<<temp[j]<<endl;
     }
     out.close();
+    in.close();
 
     out.open("new_std(评判系数).txt");
     in.open("data_std.txt");//only considering std score now
@@ -145,8 +146,8 @@ int main()
         out<<temp[j]<<endl;
     }
     out.close();
+    in.close();
 
 
     return 0;
 }
-
