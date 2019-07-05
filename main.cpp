@@ -8,14 +8,14 @@ int main()
     in.open("data_ori.txt");//only considering original score now
     ofstream out;
     out.open("new_ori(评判系数).txt");
-    double dat[1050][6];
-    double full[1050][46];
-    double avg_ori[1050];
-    int people=0;
-    double work_revised[1050];
-    double ref_weight[46];
-    double sum_weight=0;
-    double temp[46];
+    double dat[1050][6];//原始数据
+    double full[1050][46];//第j个专家给第i个作品的评分
+    double avg_ori[1050];//dat里每一行的平均值（原始分或标准分）
+    int people=0;//专家标号
+    double work_revised[1050];//由评判系数确定权重后对每个作品的回加权
+    double ref_weight[46];//每个专家的权重
+    double sum_weight=0;//总权重，方便归一化
+    double temp[46];//用来计算欧氏距离
     //double weight[1050][46];
     for (int i=1;i<=1046;i++){
         for (int j=0;j<6;j++){
